@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Corrected CSS file reference -->
+    <link rel="stylesheet" href="{% static 'users/css/home.css' %}" />
+    <title>Skillifyi</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'users/images/logo-favicon.ico' %}">
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="nav-container">
+        <div class="logo-container">
+          <a href="{% url 'home_page' %}" class="logo">
+            <!-- Corrected image file reference -->
+            <img
+              src="{% static 'users/images/logo.png' %}"
+              alt="Skillifyi Logo"
+              class="logo-img"
+            />
+          </a>
+          <span class="logo-text">Skillifyi</span>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+        >
+          <span class="hamburger">&#9776;</span>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="nav-links">
+          <ul>
+            <li><a href="{% url 'home_page' %}">Home</a></li>
+            <li><a href="{% url 'profile_page' %}">Profiles</a></li>
+            <li><a href="{% url 'resource_list' %}">Resources</a></li>
+            <li><a href="{% url 'blog_list' %}">Blogs</a></li>
+            <li><a href="{% url 'event_list' %}">Events</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section-container">
+      <!-- Left side: Text content -->
+      <div class="text-content">
+        <div class="hashtag">#SkillbySkillifyi</div>
+        <div class="title">Flexible Platform for Your Skill Development</div>
+        <p class="description">
+          Lorem ipsum praesent ac massa at ligula reet est iaculis. Vivamus est
+          mist aliquet elit ac nisl. Lorem ipsum praesent ac massa at ligula
+          reet est iaculis. Vivamus est mist.
+        </p>
+      </div>
+
+      <!-- Right side: Image -->
+      <div class="image-container">
+        <!-- Corrected image file reference -->
+        <img
+          src="{% static 'users/images/home_page_image.webp' %}"
+          alt="Man working on laptop"
+        />
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section">
+          <h4>About Skillifyi</h4>
+          <p>
+            Skillifyi is a flexible platform that helps students and
+            professionals develop and showcase their skills.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <a href="{% url 'home_page' %}">Home</a>
+          <a href="{% url 'resource_list' %}">Resources</a>
+          <a href="{% url 'blog_list' %}">Blogs</a>
+          <a href="{% url 'event_list' %}">Events</a>
+          <a href="{% url 'about_us' %}">About Us</a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p>Email: contact@skillifyi.com</p>
+          <p>Phone: +91 9876543210</p>
+          <p>Address: Bhavnagar, Gujarat, India</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#" title="Facebook">&#xf09a;</a>
+            <a href="#" title="Twitter">&#xf099;</a>
+            <a href="#" title="Instagram">&#xf16d;</a>
+            <a href="#" title="LinkedIn">&#xf0e1;</a>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Copyright Info -->
+      <div class="copyright">&copy; 2025 Skillifyi. All rights reserved.</div>
+    </footer>
+
+    <!-- Corrected JS file reference -->
+    <script
+      type="text/javascript"
+      src="{% static 'users/js/home.js' %}"
+    ></script>
+  </body>
+</html>

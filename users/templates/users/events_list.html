@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'users/css/events.css' %}" />
+    <title>Skillifyi-blogs</title>
+    \<link rel="icon" type="image/x-icon" href="{% static 'users/images/logo-favicon.ico' %}">
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="nav-container">
+        <div class="logo-container">
+          <a href="{% url 'home_page' %}" class="logo">
+            <!-- Corrected image file reference -->
+            <img
+              src="{% static 'users/images/logo.png' %}"
+              alt="Skillifyi Logo"
+              class="logo-img"
+            />
+          </a>
+          <span class="logo-text">Skillifyi</span>
+        </div>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+        >
+          <span class="hamburger">&#9776;</span>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="nav-links">
+          <ul>
+            <li><a href="{% url 'home_page' %}">Home</a></li>
+            <li><a href="{% url 'profile_page' %}">Profiles</a></li>
+            <li><a href="{% url 'resource_list' %}">Resources</a></li>
+            <li><a href="{% url 'blog_list' %}">Blogs</a></li>
+            <li><a href="{% url 'event_list' %}">Events</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <br />
+
+    <section>
+      <div class="header">
+        <h1>Events</h1>
+      </div>
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          onkeyup="searchFunction()"
+          placeholder="Search for items..."
+        />
+      </div>
+      <div class="container" id="resource-container">
+        <!-- Box 1 - Resource 1 -->
+        <div class="resource-box">
+          <h2></h2>
+          <p></p>
+          <a href="#" class="details-btn">Download</a>
+        </div>
+
+        <!-- Box 2 - Resource 2 -->
+        <div class="box">
+          <h2>{{ resource.title }}</h2>
+          <p>{{ resource.description }}</p>
+          {% if resource.id %}
+          <a
+            href="{% url 'resource_detail' resource.id %}"
+            class="details-btn"
+            type="button"
+            >Details</a
+          >
+          {% else %}
+          <span class="text-danger">Invalid Resource</span>
+          {% endif %}
+        </div>
+
+        <!-- Box 3 - Resource 3 -->
+        <div class="box">
+          <h2>New Tech Innovations</h2>
+          <p>
+            Explore the latest technological innovations that are reshaping
+            industries worldwide.
+          </p>
+          <a href="#" class="details-btn">Details</a>
+        </div>
+
+        <!-- Box 4 - Project 1 -->
+        <div class="box">
+          <h2>Calculator Project</h2>
+          <p>
+            A simple and responsive calculator built using HTML, CSS, and
+            JavaScript.
+          </p>
+          <a href="#" class="details-btn">Details</a>
+        </div>
+
+        <!-- Box 5 - Project 2 -->
+        <div class="box">
+          <h2>E-Commerce Website</h2>
+          <p>
+            Developed a fully functional e-commerce platform using Python and
+            Flask.
+          </p>
+          <a href="#" class="details-btn">Details</a>
+        </div>
+
+        <!-- Box 6 - Project 3 -->
+        <div class="box">
+          <h2>SIP Calculator</h2>
+          <p>
+            A tool to calculate Systematic Investment Plan (SIP) returns over a
+            period of time.
+          </p>
+          <a href="#" class="details-btn">Details</a>
+        </div>
+
+        <!-- Box 7 - Future Project -->
+        <div class="box">
+          <h2>Upcoming AI Project</h2>
+          <p>
+            In this project, we aim to create a conversational AI using advanced
+            techniques.
+          </p>
+          <a href="#" class="details-btn">Details</a>
+        </div>
+
+        <!-- Box 8 - Future Resource -->
+        <div class="box">
+          <h2>AI for Business</h2>
+          <p>
+            An upcoming resource focused on using AI to solve business problems
+            efficiently.
+          </p>
+          <a href="#" class="details-btn">Details</a>
+        </div>
+
+        <!-- Box 9 - Bonus Resource -->
+        <div class="box">
+          <h2>Tech Trends 2025</h2>
+          <p>
+            Stay updated on the top technology trends that will dominate in the
+            year 2025.
+          </p>
+          <a href="#" class="details-btn">Details</a>
+        </div>
+      </div>
+    </section>
+    <br /><br /><br />
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section">
+          <h4>About Skillifyi</h4>
+          <p>
+            Skillifyi is a flexible platform that helps students and
+            professionals develop and showcase their skills.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <a href="{% url 'home_page' %}">Home</a>
+          <a href="{% url 'resource_list' %}">Resources</a>
+          <a href="{% url 'blog_list' %}">Blogs</a>
+          <a href="{% url 'event_list' %}">Events</a>
+          <a href="{% url 'about_us' %}">About Us</a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p>Email: contact@skillifyi.com</p>
+          <p>Phone: +91 9876543210</p>
+          <p>Address: Bhavnagar, Gujarat, India</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#" title="Facebook">&#xf09a;</a>
+            <a href="#" title="Twitter">&#xf099;</a>
+            <a href="#" title="Instagram">&#xf16d;</a>
+            <a href="#" title="LinkedIn">&#xf0e1;</a>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <!-- Copyright Info -->
+      <div class="copyright">&copy; 2025 Skillifyi. All rights reserved.</div>
+    </footer>
+    <script type="text/javascript" src="{% static 'users/js/events.js' %}"></script>
+  </body>
+</html>

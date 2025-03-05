@@ -1,0 +1,406 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #13072d;
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(135deg, #13072d, #31135e);
+  padding: 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease; /* Add transition for hover */
+}
+
+.nav-links ul li a:hover {
+  border: 4px solid #2c1871;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* Signup and Login Button Styling */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons button {
+  background-color: #13072d;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.auth-buttons button:hover {
+  background-color: #22104a;
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+/* Hide Toggle Button on Desktop */
+.nav-toggle {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #13072d;
+    z-index: 10;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Show Toggle Button on Mobile */
+  .nav-toggle {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    font-size: 28px;
+    color: white;
+  }
+
+  /* Show Nav Links when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Hide Auth Buttons in Mobile */
+  .auth-buttons {
+    display: none; /* Remove sign up and login buttons in mobile view */
+  }
+}
+
+/* Desktop Styling */
+@media (min-width: 769px) {
+  /* Keep buttons and navigation links separate */
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  /* Align buttons to the right on desktop */
+  .auth-buttons {
+    margin-left: auto;
+  }
+}
+
+/* Add this CSS */
+.search-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically (optional) */
+  padding: 20px;
+}
+
+#searchInput {
+  padding: 8px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px; /* Limits the search box width */
+  font-size: 16px;
+  border: 1px solid #ccc; /* Optional: add a border for better visibility */
+  border-radius: 20px; /* Optional: rounded corners */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.box {
+  background: linear-gradient(#13072d, #31135e);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+.box:hover {
+  transform: scale(1.05);
+}
+.box h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+.box p {
+  font-size: 16px;
+  color: #ffffff;
+}
+.details-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #2c1871; /* Blue color for button */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.details-btn:hover {
+  background-color: #13072d; /* Darker blue on hover */
+}
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.header h1 {
+  font-size: 36px;
+  color: #ffffff; /* Dark blue for header */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box {
+  background: linear-gradient(#13072d, #31135e);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+.box h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.box p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.details-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #2c1871;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+  background-color: #13072d;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 36px;
+  color: #ffffff;
+}
+
+/* Media Queries for responsiveness */
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* 1 column for small screens */
+    padding: 10px;
+  }
+
+  .box h2 {
+    font-size: 18px;
+  }
+
+  .box p {
+    font-size: 14px;
+  }
+
+  .details-btn {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .box h2 {
+    font-size: 16px;
+  }
+
+  .box p {
+    font-size: 12px;
+  }
+
+  .details-btn {
+    padding: 6px 14px;
+  }
+}
+
+/* Footer styles */
+footer {
+  background: linear-gradient(135deg, #13072d, #31135e);
+  background-color: #31135e;
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Flexbox for arranging footer content */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer sections */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Section titles */
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #c2b5fc;
+}
+
+/* Footer links */
+.footer-section a {
+  color: #c7c7c7;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+/* Social media icons container */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: #c2b5fc;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #fff;
+  color: #2c1871;
+}
+
+/* Copyright text */
+.copyright {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #c7c7c7;
+}

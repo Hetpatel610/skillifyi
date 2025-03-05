@@ -1,0 +1,486 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #13072d;
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(135deg, #13072d, #31135e);
+  padding: 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease; /* Add transition for hover */
+}
+
+.nav-links ul li a:hover {
+  border: 4px solid #2c1871;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* Signup and Login Button Styling */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons button {
+  background-color: #13072d;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.auth-buttons button:hover {
+  background-color: #22104a;
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+/* Hide Toggle Button on Desktop */
+.nav-toggle {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #13072d;
+    z-index: 10;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Show Toggle Button on Mobile */
+  .nav-toggle {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    font-size: 28px;
+    color: white;
+  }
+
+  /* Show Nav Links when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Hide Auth Buttons in Mobile */
+  .auth-buttons {
+    display: none; /* Remove sign up and login buttons in mobile view */
+  }
+}
+
+/* Desktop Styling */
+@media (min-width: 769px) {
+  /* Keep buttons and navigation links separate */
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  /* Align buttons to the right on desktop */
+  .auth-buttons {
+    margin-left: auto;
+  }
+}
+
+/* Footer styles */
+footer {
+  background: linear-gradient(135deg, #13072d, #31135e);
+  background-color: #31135e;
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Flexbox for arranging footer content */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer sections */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Section titles */
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #c2b5fc;
+}
+
+/* Footer links */
+.footer-section a {
+  color: #c7c7c7;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+/* Social media icons container */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: #c2b5fc;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #fff;
+  color: #2c1871;
+}
+
+/* Copyright text */
+.copyright {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #c7c7c7;
+}
+
+/* Existing styles above this */
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: #13072d;
+}
+
+.profile-card {
+  display: flex;
+  background: linear-gradient(#13072d, #31135e);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+}
+
+.profile-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+
+.profile-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-name {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.settings-icon {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.settings-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.profile-bio {
+  font-size: 18px;
+  color: white;
+  margin: 10px 0;
+}
+
+.profile-details p {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.p-section {
+  font-size: 16px;
+  color: white;
+}
+
+.upload-section {
+  font-size: 16px;
+}
+
+.upload-btn {
+  text-decoration: none;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.upload-btn img {
+  width: 24px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-link {
+  display: inline-block;
+  background-color: #555;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 25px;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.social-link:hover {
+  background-color: #333;
+}
+
+
+/* Make sure header appears properly */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .profile-section {
+    height: auto;
+    padding: 40px 0; /* Add padding to prevent overlap */
+  }
+
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .profile-image img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px; /* Add margin for spacing */
+  }
+
+  .profile-info {
+    padding: 20px;
+  }
+
+  .profile-name {
+    font-size: 26px;
+  }
+
+  .profile-bio {
+    font-size: 16px;
+  }
+
+  .profile-details p {
+    font-size: 14px;
+  }
+
+  .social-link {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-section {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .profile-image img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+
+  .profile-info {
+    padding: 10px;
+  }
+
+  .profile-name {
+    font-size: 22px;
+  }
+
+  .profile-bio {
+    font-size: 14px;
+  }
+
+  .profile-details p {
+    font-size: 12px;
+  }
+
+  .social-link {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.upload-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.upload-btn {
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.upload-icon {
+  height: 24px;
+  margin-right: 10px;
+}

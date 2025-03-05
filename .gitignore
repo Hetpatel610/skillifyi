@@ -1,0 +1,15 @@
+# Ignore Python & Django specific files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environment
+env/
+venv/
+
+# Ignore database (SQLite, if used)
+*.sqlite3
+
+# Ignore secret files
+.env
+runtime.txt

@@ -1,0 +1,316 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #13072d;
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(135deg, #13072d, #31135e);
+  padding: 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo styling */
+.logo-container {
+  display: flex;
+  align-items: left;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease; /* Add transition for hover */
+}
+
+.nav-links ul li a:hover {
+  border: 4px solid #2c1871;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* Hide Toggle Button on Desktop */
+.nav-toggle {
+  display: none;
+}
+
+/* Mobile styles */
+
+@media (max-width: 768px) {
+  /* Center the logo text and move the nav-toggle (hamburger) to the right */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+  }
+
+  .nav-toggle {
+    display: block;
+    order: 2;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #13072d;
+    z-index: 10;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hamburger {
+    font-size: 28px;
+    color: white;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Center the auth buttons below the navigation */
+  .auth-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .auth-buttons button {
+    width: 80%; /* Make buttons take 80% of the mobile screen width */
+    text-align: center;
+  }
+}
+
+
+/* Desktop Styling */
+@media (min-width: 769px) {
+  /* Keep buttons and navigation links separate */
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  /* Align buttons to the right on desktop */
+  .auth-buttons {
+    margin-left: auto;
+  }
+}
+
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #13072d, #31135e);
+  border-radius: 25px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Left side: Text content */
+.text-content {
+  max-width: 50%;
+  color: white;
+}
+
+.hashtag {
+  background-color: #c2b5fc;
+  color: #2c1871;
+  font-size: 14px;
+  padding: 5px 15px;
+  border-radius: 25px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: #c7c7c7;
+}
+
+.cta-button {
+  background-color: #fff;
+  color: #2c1871;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-button:hover {
+  background-color: #ddd;
+  color: #2c1871;
+}
+
+/* Right side: Image */
+.image-container {
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+}
+/* Footer styles */
+footer {
+  background: linear-gradient(135deg, #13072d, #31135e);
+  background-color: #31135e;
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Flexbox for arranging footer content */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer sections */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Section titles */
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #c2b5fc;
+}
+
+/* Footer links */
+.footer-section a {
+  color: #c7c7c7;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+/* Social media icons container */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: #c2b5fc;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #fff;
+  color: #2c1871;
+}
+
+/* Copyright text */
+.copyright {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #c7c7c7;
+}

@@ -1,0 +1,412 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #13072d;
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(135deg, #13072d, #31135e);
+  padding: 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease; /* Add transition for hover */
+}
+
+.nav-links ul li a:hover {
+  border: 4px solid #2c1871;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* Signup and Login Button Styling */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons button {
+  background-color: #13072d;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.auth-buttons button:hover {
+  background-color: #22104a;
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+/* Hide Toggle Button on Desktop */
+.nav-toggle {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #13072d;
+    z-index: 10;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Show Toggle Button on Mobile */
+  .nav-toggle {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    font-size: 28px;
+    color: white;
+  }
+
+  /* Show Nav Links when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Hide Auth Buttons in Mobile */
+  .auth-buttons {
+    display: none; /* Remove sign up and login buttons in mobile view */
+  }
+}
+
+/* Desktop Styling */
+@media (min-width: 769px) {
+  /* Keep buttons and navigation links separate */
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  /* Align buttons to the right on desktop */
+  .auth-buttons {
+    margin-left: auto;
+  }
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* 3:2 split for profiles and Skillifyi info */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns for the profiles */
+  gap: 20px;
+}
+
+.profile-box {
+  text-align: center;
+  padding: 20px;
+  background: radial-gradient(#13072d, #22104a);
+}
+
+.profile-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-details {
+  margin-top: 15px;
+}
+
+.profile-details h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.profile-details p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 2px 0;
+}
+
+.skillifyi-info {
+  background-color: #292c3e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.skillifyi-info h2 {
+  font-size: 24px;
+  color: #f4e16e; /* Gold color for heading */
+  margin-bottom: 15px;
+}
+
+.skillifyi-info p {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* 3:2 split for profiles and Skillifyi info */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Four columns for the profiles */
+  gap: 20px;
+}
+
+.profile-box {
+  text-align: center;
+  padding: 20px;
+  background: radial-gradient(#13072d, #22104a);
+}
+
+.profile-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-details {
+  margin-top: 15px;
+}
+
+.profile-details h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.profile-details p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 2px 0;
+}
+
+.skillifyi-info {
+  background-color: #292c3e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.skillifyi-info h2 {
+  font-size: 24px;
+  color: #f4e16e; /* Gold color for heading */
+  margin-bottom: 15px;
+}
+
+.skillifyi-info p {
+  font-size: 16px;
+  color: #ddd;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets (max-width 768px) */
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr; /* Single column layout for the entire section */
+  }
+
+  .profiles {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for profiles */
+  }
+
+  .profile-box img {
+    width: 100px;
+    height: 100px; /* Reduce image size on tablets */
+  }
+}
+
+/* For mobile devices (max-width 480px) */
+@media (max-width: 480px) {
+  .about-container {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+  }
+
+  .profiles {
+    grid-template-columns: 1fr; /* One column layout for profiles */
+  }
+
+  .profile-box {
+    padding: 15px;
+  }
+
+  .profile-box img {
+    width: 80px;
+    height: 80px; /* Further reduce image size for mobile */
+  }
+
+  .profile-details h3 {
+    font-size: 16px; /* Adjust text size for mobile */
+  }
+
+  .profile-details p {
+    font-size: 12px;
+  }
+
+  .skillifyi-info h2 {
+    font-size: 20px;
+  }
+
+  .skillifyi-info p {
+    font-size: 14px;
+  }
+}
+
+/* Footer styles */
+footer {
+  background: linear-gradient(135deg, #13072d, #31135e);
+  background-color: #31135e;
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Flexbox for arranging footer content */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer sections */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Section titles */
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #c2b5fc;
+}
+
+/* Footer links */
+.footer-section a {
+  color: #c7c7c7;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+/* Social media icons container */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  background-color: #c2b5fc;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #fff;
+  color: #2c1871;
+}
+
+/* Copyright text */
+.copyright {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #c7c7c7;
+}
