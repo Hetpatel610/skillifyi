@@ -11,30 +11,30 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
 from environ import Env
-env = Env()
-Env.read_env()
-ENVIROMENT = env('ENVIROMENT', default='pproduction')
+import os
+import dj_database_url
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Initialize environment variables
+env = Env()
+Env.read_env(os.path.join(Path(__file__).resolve().parent.parent, ".env"))
+
+# Correct spelling mistake
+ENVIRONMENT = env('ENVIRONMENT', default='development')
+
+# Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: Keep the secret key secret!
 SECRET_KEY = env('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-if ENVIROMENT == 'development':
-    DEBUG = True
-else:
-    DEBUG = False
+# Set DEBUG mode based on environment
+DEBUG = ENVIRONMENT == "development"
 
-ALLOWED_HOSTS = ['*']
+# Allow all hosts (change this in production)
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'skillifyi-production.up.railway.app']
 
+CSRF_TRUSTED_ORIGINS = ['https://skillifyi-production.up.railway.app/']
 
 # Application definition
 
@@ -86,16 +86,19 @@ WSGI_APPLICATION = 'skillifyi_backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-import dj_database_url
-import os
+POSTGRES_LOCALLY = env.bool("POSTGRES_LOCALLY", default=False)
 
-DATABASES = {
-    'default': {
-        'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY:
+    DATABASES = {
+        'default': dj_database_url.parse(env('DATABASE_URL'))
     }
-}
-
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
